@@ -1,5 +1,173 @@
-body {
-  background: black;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&family=Shrikhand&display=swap");
+/*font variables*/
+/*size variables*/
+/*backgrounds*/
+/*polices*/
+/*boutons*/
+/*styles*/
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*header*/
+.banner {
+  height: 60px;
+}
+.banner__logo {
+  padding: 15px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*section 1*/
+.section1 {
+  font-family: "Roboto", Arial, Georgia, sans-serif;
+}
+
+.situation {
+  text-align: center;
+  background-color: #eaeaea;
+  height: 50px;
+  padding-top: 15px;
+}
+.situation a {
+  font-family: "Roboto", Arial, Georgia, sans-serif;
+  color: black;
+}
+.situation--icones {
+  margin-right: 15px;
+}
+
+.explorer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 290px;
+  background-color: whitesmoke;
+}
+.explorer__btn {
+  color: white;
+  border: 1px solid #FF79DA;
+  border-radius: 40px;
+  height: 50px;
+  width: 200px;
+  background: linear-gradient(340deg, #9356DC 0%, #FF79DA 90%);
+}
+.explorer__btn:hover {
+  background: linear-gradient(340deg, transparent, #FF79DA 100%);
+}
+
+.presentation {
+  margin-left: 10px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.presentation__section {
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.presentation__items {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eaeaea;
+  height: 70px;
+  width: 320px;
+  padding-left: 35px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 3px 3px 5px #eaeaea;
+  position: relative;
+}
+.presentation__items--num {
+  color: white;
+  background-color: #9356DC;
+  text-align: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  position: absolute;
+  left: -10px;
+}
+.presentation__items--icones {
+  margin-right: 30px;
+}
+
+/*section 2 restaurants*/
+.section2 {
+  font-family: "Roboto", Arial, Georgia, sans-serif;
+  background-color: whitesmoke;
+}
+
+.restaurants__cardsection {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  overflow: hidden;
+  width: 340px;
+  height: 250px;
+  border: 1px solid #eaeaea;
+  border-radius: 20px;
+  position: relative;
+}
+.card__img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  object-position: center 60%;
+}
+.card__img--sticker {
+  width: 85px;
+  height: 30px;
+  color: #448367;
+  padding: 5px 0 0 5px;
+  background-color: #99E2D0;
+  border: 1px solid #99E2D0;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.card__description {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+.card__description--text {
+  max-width: 165px;
+}
+.card__description--medium {
+  font-weight: 700;
+}
+
+.footer {
+  background-color: gray;
+}
+.footer__title {
+  color: white;
+  font-family: "Shrikhand", cursive, Arial, Georgia, sans-serif;
+  font-size: 15px;
+}
+.footer__items {
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
