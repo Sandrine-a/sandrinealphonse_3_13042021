@@ -1,0 +1,144 @@
+@import "./Base/charte";
+@import "./Utils/variables";
+@import "./Utils/functions";
+@import "./Utils/mixins";
+
+* {
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/*header*/
+.banner{
+  height: 60px;
+  &__logo {
+    padding: $size-small 0; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/*section 1*/
+.section1{
+  font-family: $roboto;
+}
+.situation {
+  text-align:center;
+  background-color: $color-shadow;
+  height:50px;
+  padding-top: $size-small;
+  a {
+    @include text-medium;
+  }
+  &--icones {
+    margin-right: $size-small;
+  }
+}
+.explorer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 290px;
+  @include bloc-background($color-neutral);
+  &__btn {
+    @include btn;
+  }
+}
+.presentation {
+  margin-left: 10px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__section {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+.presentation__items {
+    display: flex;
+    align-items: center;
+    border: 1px solid $color-shadow;
+    height: 70px;
+    width: 320px;
+    padding-left: 35px;
+    @include curve-border($color-neutral);
+    @include bloc-background($color-neutral);
+    @include shadow($color-shadow);
+    position: relative;
+    &--num{
+      color: $color-neutral;
+      background-color: $color-primary;
+      text-align: center;
+      height: 25px;
+      width: 25px;
+      border-radius: 25px;
+      position: absolute;
+      left: -10px;
+    }
+    &--icones {
+      margin-right: 30px;
+    }
+}
+/*section 2 restaurants*/
+.section2{
+  font-family: $roboto;
+  @include bloc-background($color-neutral);
+}
+.restaurants__cardsection {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  overflow: hidden;
+  width: 340px;
+  height: 250px;
+  @include curve-border($color-shadow);
+  position: relative;
+  &__img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    object-position: center 60%;
+    &--sticker {
+      width: 85px;
+      height: 30px;
+      color: rgb(68, 131, 103);
+      padding: 5px 0 0 5px;
+      background-color: $color-tertiary;
+      @include curve-border($color-tertiary);
+      position: absolute;
+      right: 10px;
+      top: 0;
+    }
+  }
+  &__description {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    &--text {
+      max-width: 165px;
+    }
+    &--medium {
+      font-weight: $gras;
+    }
+  }
+}
+
+.footer {
+  background-color: gray;
+  &__title {
+    @include title-shrikhand($color-neutral);
+  }
+  &__items {
+    color: $color-neutral;
+  }
+}
