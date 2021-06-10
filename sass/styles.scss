@@ -12,6 +12,9 @@ li {
 a {
   text-decoration: none;
 }
+body {
+  margin: 0;
+}
 /*header*/
 .banner{
   height: 60px;
@@ -28,7 +31,7 @@ a {
 }
 .situation {
   text-align:center;
-  background-color: $color-shadow;
+  background-color: $color-shadow-dark;
   height:50px;
   padding-top: $size-small;
   a {
@@ -45,9 +48,9 @@ a {
   justify-content: center;
   align-items: center;
   height: 290px;
-  @include bloc-background($color-neutral);
+  @include bloc-background($color-shadow);
   &__btn {
-    @include btn;
+    @include btn ($color-secondary-light);
   }
 }
 .presentation {
@@ -70,39 +73,54 @@ a {
     height: 70px;
     width: 320px;
     padding-left: 35px;
-    @include curve-border($color-neutral);
-    @include bloc-background($color-neutral);
-    @include shadow($color-shadow);
+    @include curve-border($color-shadow-dark);
+    @include bloc-background($color-shadow);
+    @include shadow($color-shadow-dark);
     position: relative;
     &--num{
       color: $color-neutral;
       background-color: $color-primary;
       text-align: center;
-      height: 25px;
-      width: 25px;
-      border-radius: 25px;
+      padding: 2px;
+      height: 22px;
+      width: 22px;
+      border-radius: 22px;
       position: absolute;
       left: -10px;
     }
     &--icones {
+      color: $color-accent;
       margin-right: 30px;
     }
 }
 /*section 2 restaurants*/
 .section2{
   font-family: $roboto;
-  @include bloc-background($color-neutral);
+  @include bloc-background($color-shadow);
 }
-.restaurants__cardsection {
+.restaurants {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  height: 1180px;
+  &__title {
+    align-self: baseline;
+  }
+  &__cardsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 1070px;
+  }
 }
 .card {
   overflow: hidden;
-  width: 340px;
+  width: 335px;
   height: 250px;
   @include curve-border($color-shadow);
   position: relative;
+  background-color: white;
   &__img {
     width: 100%;
     height: 170px;
@@ -124,21 +142,31 @@ a {
     color: black;
     display: flex;
     justify-content: space-between;
+    padding-left: 12px;
     &--text {
       max-width: 165px;
     }
     &--medium {
       font-weight: $gras;
+      margin: 10px 0 -10px 0;
     }
   }
 }
-
+.fa-heart {
+  padding: $padding-icones;
+  display: inline-block;
+}
 .footer {
-  background-color: gray;
+  height: 190px;
+  background-color: $color-footer;
+  font-family: $roboto;
   &__title {
     @include title-shrikhand($color-neutral);
+    margin-top: 0;
+    padding: 20px 0 0 20px;
   }
   &__items {
     color: $color-neutral;
+    padding-left: 0;
   }
 }
