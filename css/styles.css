@@ -3,6 +3,7 @@
 /*size variables*/
 /*padding*/
 /*backgrounds*/
+/*color*/
 /*polices*/
 /*boutons*/
 /*styles*/
@@ -130,7 +131,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 1180px;
+  height: 1200px;
 }
 .restaurants__title {
   align-self: baseline;
@@ -193,17 +194,24 @@ body {
   height: 190px;
   background-color: #353535;
   font-family: "Roboto", Arial, Georgia, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 .footer__title {
   color: white;
   font-family: "Shrikhand", cursive, Arial, Georgia, sans-serif;
   font-size: 15px;
-  margin-top: 0;
-  padding: 20px 0 0 20px;
+  max-width: 200px;
+  margin: 0;
+  padding: 20px 0 0 40px;
 }
-.footer__items {
+
+.menu__items {
+  max-width: 200px;
+  margin-bottom: 5px;
+}
+.menu__items--link {
   color: white;
-  padding-left: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
