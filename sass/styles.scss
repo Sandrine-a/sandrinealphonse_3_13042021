@@ -102,7 +102,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 1180px;
+  height: 1200px;
   &__title {
     align-self: baseline;
   }
@@ -160,13 +160,19 @@ body {
   height: 190px;
   background-color: $color-footer;
   font-family: $roboto;
+  display: flex;
+  flex-direction: column;
   &__title {
     @include title-shrikhand($color-neutral);
-    margin-top: 0;
-    padding: 20px 0 0 20px;
+    max-width: 200px;
+    margin: 0;
+    padding: 20px 0 0 40px;
   }
-  &__items {
+}
+.menu__items {
+  max-width: 200px;
+  margin-bottom: 5px;
+  &--link {
     color: $color-neutral;
-    padding-left: 0;
   }
 }
