@@ -1,4 +1,5 @@
 @import "./Base/charte";
+@import "./Base/keyframes";
 @import "./Utils/variables";
 @import "./Utils/functions";
 @import "./Utils/mixins";
@@ -14,6 +15,24 @@ a {
 }
 body {
   margin: 0;
+}
+/*loader*/
+.load {
+  width: $size-bar*10;
+  height: $size-bar*7;
+  display: flex;
+  justify-content: space-evenly;
+  &__bar {
+    background-color: $color-tertiary;
+    height: 100%;
+    width: $size-bar;
+    animation: bars $anim-dur backwards infinite ease-in-out alternate;
+    @for $i from 1 through $num-bars {
+      &--#{$i} {
+        animation-delay: $anim-delay * $i;
+      }
+    }
+  }
 }
 /*header*/
 .banner{
@@ -35,7 +54,7 @@ body {
   height:50px;
   padding-top: $size-small;
   a {
-    @include text-medium;
+    color: $color-black;
   }
   &--icones {
     margin-right: $size-small;
@@ -67,31 +86,51 @@ body {
   }
 }
 .presentation__items {
-    display: flex;
-    align-items: center;
-    border: 1px solid $color-shadow;
-    height: 70px;
-    width: 320px;
-    padding-left: 35px;
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-shadow;
+  height: 70px;
+  width: 320px;
+  padding-left: 35px;
+  @include curve-border($color-shadow-dark);
+  @include bloc-background($color-shadow);
+  @include shadow($color-shadow-dark);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  &:hover {
+    &::after {
+        opacity: 1;
+    }
+  }
+  &::after {
     @include curve-border($color-shadow-dark);
-    @include bloc-background($color-shadow);
-    @include shadow($color-shadow-dark);
+    @include bloc-background-light($color-primary);
+    z-index: -1;
+    transition: opacity 300ms;
+    opacity: 0;
+    @include pseudo-pos;      
+    }
+  &--icones {
+    color: $color-accent;
+    margin-right: 30px;
     position: relative;
-    &--num{
-      color: $color-neutral;
-      background-color: $color-primary;
-      text-align: center;
-      padding: 2px;
-      height: 22px;
-      width: 22px;
-      border-radius: 22px;
-      position: absolute;
-      left: -10px;
+    z-index: 1;
+    &:hover {
+      color: $color-primary;
     }
-    &--icones {
-      color: $color-accent;
-      margin-right: 30px;
-    }
+  } 
+  &--num {
+    color: $color-neutral;
+    background-color: $color-primary;
+    text-align: center;
+    padding: 2px;
+    height: 22px;
+    width: 22px;
+    border-radius: 22px;
+    position: absolute;
+    left: -10px;
+  }
 }
 /*section 2 restaurants*/
 .section2{
@@ -156,6 +195,7 @@ body {
   padding: $padding-icones;
   display: inline-block;
 }
+/*footer */
 .footer {
   height: 190px;
   background-color: $color-footer;
