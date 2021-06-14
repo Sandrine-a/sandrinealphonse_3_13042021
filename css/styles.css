@@ -57,15 +57,22 @@ body {
 }
 
 /*loader*/
+.container__load {
+  position: fixed;
+  /*remettre a 11 par défaut*/
+  animation: anim-bars 2000ms ease-in-out;
+  z-index: -1000;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
 .load {
   width: 40vh;
   height: 28vh;
   display: flex;
   justify-content: space-evenly;
-  margin: 24vh;
-  position: fixed;
-  animation: anim-bars 10000ms;
-  z-index: -1000;
+  margin: 40vh 12vh;
 }
 .load__bar {
   background-color: #99E2D0;
@@ -297,7 +304,7 @@ body {
 .like::before {
   content: "";
   width: 11px;
-  height: 11px;
+  height: 8px;
   background: white;
   position: absolute;
   border: 1px solid black;

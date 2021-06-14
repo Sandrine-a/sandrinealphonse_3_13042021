@@ -17,15 +17,21 @@ body {
   margin: 0;
 }
 /*loader*/
+.container__load {
+  position: fixed;
+  /*remettre a 11 par défaut*/
+  animation: anim-bars $anim-dur*2 ease-in-out;
+  z-index: -1000;
+  background-color: $color-neutral;
+  width: 100%;
+  height: 100%;
+}
 .load {
   width: $size-bar*10;
   height: $size-bar*7;
   display: flex;
   justify-content: space-evenly;
-  margin: $size-bar*6;
-  position: fixed;
-  animation: anim-bars $anim-dur*10;
-  z-index: -1000;
+  margin: $size-bar*10 $size-bar*3;
   &__bar {
     background-color: $color-tertiary;
     height: 100%;
@@ -217,7 +223,7 @@ body {
     &::before {
       content: "";
       width: 11px;
-      height: 11px;
+      height: 8px;
       background: $color-neutral;
       position: absolute;
       border: 1px solid black;
