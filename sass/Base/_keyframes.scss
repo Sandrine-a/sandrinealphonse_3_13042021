@@ -1,9 +1,19 @@
 @keyframes bars {
   0% {
     transform: scaleY(0.3);
+    opacity: 1;
   }
   100% {
     transform: scaleY(1.0);
+    opacity: 1;
+  }
+}
+@keyframes anim-bars {
+  0% {
+    z-index: 1000;
+  }
+  100% {
+    z-index: 1000
   }
 }
 @keyframes heart-fill {
