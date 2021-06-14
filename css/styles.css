@@ -38,6 +38,7 @@
 /*color*/
 /*polices*/
 /*boutons*/
+/*mixi pour creer contenu before ou after*/
 /*styles*/
 /*icones*/
 * {
@@ -59,8 +60,8 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 11 par défaut*/
-  animation: anim-bars 11000ms ease-in-out;
+  /*remettre a 7 par défaut*/
+  animation: anim-bars 8000ms ease-in-out;
   z-index: -1000;
   background-color: white;
   width: 100%;
@@ -72,13 +73,13 @@ body {
   height: 28vh;
   display: flex;
   justify-content: space-evenly;
-  margin: 40vh 12vh;
+  margin: 40vh 8vh;
 }
 .load__bar {
   background-color: #99E2D0;
   height: 100%;
   width: 4vh;
-  animation: bars 1000ms backwards 10 ease-in-out alternate;
+  animation: bars 1000ms backwards 7 ease-in-out alternate;
   opacity: 0;
 }
 .load__bar--1 {
@@ -132,17 +133,27 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 290px;
+  height: 280px;
   background-color: #f6f6f6;
+}
+.explorer__title {
+  width: 75%;
+  margin-top: 0;
+}
+.explorer__text {
+  width: 85%;
+  font-weight: 300;
+  margin-top: 0;
 }
 .explorer__btn {
   cursor: pointer;
   color: white;
-  border: 1px solid rgba(255, 121, 218, 0.5);
+  border: 1px solid #f6f6f6;
   border-radius: 40px;
   height: 50px;
   width: 200px;
-  background: linear-gradient(340deg, #9356DC 0%, #FF79DA 90%);
+  padding-top: 13px;
+  background: linear-gradient(355deg, #9356DC 0%, #FF79DA 90%);
   transition: box-shadow 1000ms 300ms ease-in-out, background-color 1300ms ease-in-out;
 }
 .explorer__btn:hover {
@@ -150,9 +161,15 @@ body {
   box-shadow: 3px 4px 6px #7d7d7d, -1px -2px 12px #7d7d7d;
   background-color: rgba(255, 121, 218, 0.5);
 }
+.explorer__btn--link {
+  height: 30px;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
 
 .presentation {
-  margin-left: 10px;
+  margin-left: 15px;
   height: 430px;
   display: flex;
   flex-direction: column;
@@ -170,7 +187,7 @@ body {
   align-items: center;
   border: 1px solid #f6f6f6;
   height: 70px;
-  width: 320px;
+  max-width: 320px;
   padding-left: 35px;
   border: 1px solid #eaeaea;
   border-radius: 20px;
@@ -228,10 +245,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 1200px;
+  height: 1220px;
 }
 .restaurants__title {
   align-self: baseline;
+  margin-left: 15px;
 }
 .restaurants__cardsection {
   display: flex;
@@ -243,7 +261,7 @@ body {
 
 .card {
   overflow: hidden;
-  width: 335px;
+  max-width: 334px;
   height: 250px;
   border: 1px solid #f6f6f6;
   border-radius: 20px;

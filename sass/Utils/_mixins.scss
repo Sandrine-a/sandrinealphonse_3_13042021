@@ -10,7 +10,7 @@
 }
 /*color*/
 @mixin clr-radiant {
-  background: linear-gradient(340deg,$color-primary 0%, $color-secondary 90%);
+  background: linear-gradient(355deg,$color-primary 0%, $color-secondary 90%);
 }
 /*polices*/
 @mixin title-shrikhand($color) {
@@ -18,15 +18,22 @@
   font-family: $shrikhand;
   font-size: $size-small;
 }
+@mixin title-btn($color){
+  height: 30px;
+  color: $color;
+  text-align: center;
+  font-size: $size-small;
+}
 
 /*boutons*/
 @mixin btn($color) {
   cursor: pointer;
   color: $color-neutral;
-  border: 1px solid $color;
+  border: 1px solid $color-shadow;
   border-radius: 40px;
   height: 50px;
   width: 200px;
+  padding-top: $padding-btn;
   @include clr-radiant;
   transition: box-shadow 1000ms 300ms ease-in-out, background-color 1300ms ease-in-out;
   &:hover {
@@ -35,6 +42,7 @@
     background-color: $color;
   }
 }
+/*mixi pour creer contenu before ou after*/
 @mixin pseudo-pos {
   content: "";
   position: absolute;

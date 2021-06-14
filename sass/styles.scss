@@ -19,8 +19,8 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 11 par défaut*/
-  animation: anim-bars $anim-dur*11 ease-in-out;
+  /*remettre a 7 par défaut*/
+  animation: anim-bars $anim-dur*8 ease-in-out;
   z-index: -1000;
   background-color: $color-neutral;
   width: 100%;
@@ -31,12 +31,12 @@ body {
   height: $size-bar*7;
   display: flex;
   justify-content: space-evenly;
-  margin: $size-bar*10 $size-bar*3;
+  margin: $size-bar*10 $size-bar*2;
   &__bar {
     background-color: $color-tertiary;
     height: 100%;
     width: $size-bar;
-    animation: bars $anim-dur backwards 10 ease-in-out alternate;
+    animation: bars $anim-dur backwards 7 ease-in-out alternate;
     opacity: 0;
     @for $i from 1 through $num-bars {
       &--#{$i} {
@@ -77,14 +77,26 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 290px;
+  height: 280px;
   @include bloc-background($color-shadow);
+  &__title {
+    width: 75%;
+    margin-top: 0;
+  }
+  &__text {
+    width:85%;
+    font-weight: $size-thin;
+    margin-top: 0;
+  }
   &__btn {
     @include btn ($color-secondary-light);
+    &--link {
+      @include title-btn ($color-neutral);
+    }
   }
 }
 .presentation {
-  margin-left: 10px;
+  margin-left: 15px;
   height: 430px;
   display: flex;
   flex-direction: column;
@@ -101,7 +113,7 @@ body {
   align-items: center;
   border: 1px solid $color-shadow;
   height: 70px;
-  width: 320px;
+  max-width: 320px;
   padding-left: 35px;
   @include curve-border($color-shadow-dark);
   @include bloc-background($color-shadow);
@@ -152,9 +164,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 1200px;
+  height: 1220px;
   &__title {
     align-self: baseline;
+    margin-left: 15px;
   }
   &__cardsection {
     display: flex;
@@ -166,7 +179,7 @@ body {
 }
 .card {
   overflow: hidden;
-  width: 335px;
+  max-width: 334px;
   height: 250px;
   @include curve-border($color-shadow);
   position: relative;
