@@ -28,7 +28,7 @@
   height: 50px;
   width: 200px;
   @include clr-radiant;
-  transition: box-shadow 2000ms 500ms, background-color 2500ms;
+  transition: box-shadow 1000ms 300ms ease-in-out, background-color 1300ms ease-in-out;
   &:hover {
     background: none;
     @include shadow($color-accent);
@@ -55,15 +55,15 @@
 }
 /*icones*/
 @mixin heart-base {
-  height: 16px;
-  width: 16px;
+  height: 14px;
+  width: 14px;
   position: absolute;
-  transform: rotate(45deg)
+  transform: rotate(45deg);
 }
 @mixin heart-rounds {
   content: "";
-  width: 100%;
-  height: 100%;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   position: absolute;
   /*add side position*/
