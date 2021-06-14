@@ -22,11 +22,16 @@ body {
   height: $size-bar*7;
   display: flex;
   justify-content: space-evenly;
+  margin: $size-bar*6;
+  position: fixed;
+  animation: anim-bars $anim-dur*10;
+  z-index: -1000;
   &__bar {
     background-color: $color-tertiary;
     height: 100%;
     width: $size-bar;
-    animation: bars $anim-dur backwards infinite ease-in-out alternate paused;
+    animation: bars $anim-dur backwards 10 ease-in-out alternate;
+    opacity: 0;
     /*paused le temps de terminer le style*/
     @for $i from 1 through $num-bars {
       &--#{$i} {
