@@ -20,7 +20,7 @@ body {
 .container__load {
   position: fixed;
   /*remettre a 11 par défaut*/
-  animation: anim-bars $anim-dur*2 ease-in-out;
+  animation: anim-bars $anim-dur*11 ease-in-out;
   z-index: -1000;
   background-color: $color-neutral;
   width: 100%;
@@ -38,7 +38,6 @@ body {
     width: $size-bar;
     animation: bars $anim-dur backwards 10 ease-in-out alternate;
     opacity: 0;
-    /*paused le temps de terminer le style*/
     @for $i from 1 through $num-bars {
       &--#{$i} {
         animation-delay: $anim-delay * $i;
