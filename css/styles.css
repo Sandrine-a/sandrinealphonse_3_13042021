@@ -3,9 +3,19 @@
 @keyframes bars {
   0% {
     transform: scaleY(0.3);
+    opacity: 1;
   }
   100% {
     transform: scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes anim-bars {
+  0% {
+    z-index: 1000;
+  }
+  100% {
+    z-index: 1000;
   }
 }
 @keyframes heart-fill {
@@ -52,12 +62,17 @@ body {
   height: 28vh;
   display: flex;
   justify-content: space-evenly;
+  margin: 24vh;
+  position: fixed;
+  animation: anim-bars 10000ms;
+  z-index: -1000;
 }
 .load__bar {
   background-color: #99E2D0;
   height: 100%;
   width: 4vh;
-  animation: bars 1000ms backwards infinite ease-in-out alternate paused;
+  animation: bars 1000ms backwards 10 ease-in-out alternate;
+  opacity: 0;
   /*paused le temps de terminer le style*/
 }
 .load__bar--1 {
