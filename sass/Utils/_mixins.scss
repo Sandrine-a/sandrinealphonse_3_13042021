@@ -1,0 +1,70 @@
+/*backgrounds*/
+@mixin bloc-background($color) {
+  background-color: ($color);
+}
+@mixin bloc-background-light($color) {
+  background-color: lighten($color, 30%);
+}
+@mixin shadow($color) {
+  box-shadow: 3px 4px 6px ($color), -1px -2px 12px ($color);
+}
+/*color*/
+@mixin clr-radiant {
+  background: linear-gradient(340deg,$color-primary 0%, $color-secondary 90%);
+}
+/*polices*/
+@mixin title-shrikhand($color) {
+  color: $color;
+  font-family: $shrikhand;
+  font-size: $size-small;
+}
+
+/*boutons*/
+@mixin btn($color) {
+  cursor: pointer;
+  color: $color-neutral;
+  border: 1px solid $color;
+  border-radius: 40px;
+  height: 50px;
+  width: 200px;
+  @include clr-radiant;
+  transition: box-shadow 2000ms 500ms, background-color 2500ms;
+  &:hover {
+    background: none;
+    @include shadow($color-accent);
+    background-color: $color;
+  }
+}
+@mixin pseudo-pos {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/*styles*/
+@mixin curve-border($color){
+  border: 1px solid $color;
+  @if ($color) == $color-tertiary {
+    border-radius: 2px;
+  }
+  @else {
+  border-radius: 20px;
+  }
+}
+/*icones*/
+@mixin heart-base {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  transform: rotate(45deg)
+}
+@mixin heart-rounds {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  /*add side position*/
+}
