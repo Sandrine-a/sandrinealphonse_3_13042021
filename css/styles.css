@@ -405,11 +405,11 @@ body {
   padding: 20px 0 0 40px;
 }
 
-.menu__items {
+.footer__items {
   max-width: 200px;
   margin-bottom: 5px;
 }
-.menu__items--link {
+.footer__items--link {
   color: white;
 }
 
