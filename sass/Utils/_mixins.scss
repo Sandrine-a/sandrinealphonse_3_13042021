@@ -24,7 +24,13 @@
   text-align: center;
   font-size: $size-small;
 }
-
+ @mixin title-text-menu {
+  text-transform: uppercase;
+  font-weight: lighter;
+ }
+ @mixin text-underline($color){
+   border-bottom: 2px solid $color;
+ }
 /*boutons*/
 @mixin btn($color) {
   cursor: pointer;
