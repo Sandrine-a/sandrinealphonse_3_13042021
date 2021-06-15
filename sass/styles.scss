@@ -48,6 +48,20 @@ body {
 /*header*/
 .banner{
   height: 60px;
+  position: relative;
+  &__icone {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    &--link {
+      height: 100%;
+      width: 100%;
+      color: $color-black;
+    }
+    &--arrow {
+      padding: 21px;
+    }
+  }
   &__logo {
     padding: $size-small 0; 
     display: block;
@@ -55,6 +69,17 @@ body {
     margin-right: auto;
   }
 }
+/*Pages Menu*/ 
+.hightlight {
+  &__photo {
+  height: 250px;
+  }
+}
+.section-card {
+  @include bloc-background($color-shadow);
+  font-family: $roboto;
+}
+/*page accueil*/
 /*section 1*/
 .section1{
   font-family: $roboto;
@@ -207,11 +232,15 @@ body {
     justify-content: space-between;
     padding: 0 20px 0 12px;
     &--text {
+      flex: 1;
       max-width: 165px;
     }
     &--medium {
       font-weight: $gras;
       margin: 10px 0 -10px 0;
+    }
+    &--thin {
+      font-weight: $size-thin;
     }
     &--icones {
       width: 40px;
@@ -228,7 +257,6 @@ body {
   opacity: 1;
   border-bottom: 1px solid $color-black;
   border-right: 1px solid $color-black;
-  background-color: $color-neutral;
   position: absolute;
   z-index: 3;
   transition: opacity 1000ms;
@@ -236,7 +264,6 @@ body {
       content: "";
       width: 11px;
       height: 8px;
-      background: $color-neutral;
       position: absolute;
       border: 1px solid black;
       border-top-left-radius: 50%;
@@ -250,7 +277,6 @@ body {
       width: 8px;
       height: 11px;
       position: absolute;
-      background: $color-neutral;
       border: 1px solid black;
       border-bottom-left-radius: 50%;
       border-top-left-radius: 50%;
@@ -288,6 +314,57 @@ body {
     top: -8px;
   }
 }
+/*Pages Menu*/
+.menu {
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    @include title-shrikhand($color-black) 
+  }
+  &__title {
+    &--text {
+      @include title-text-menu;
+    }
+    &--borderpart {
+      @include text-underline($color-tertiary);
+    }
+  }
+  &__cardsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 270px;
+  }
+  &__card {
+    @include curve-border($color-shadow);
+    @include bloc-background($color-neutral);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0 8px;
+    height: 70px;
+    animation: card-display $anim-dur forwards ease-in-out;
+    opacity: 0;
+    @for $i from 1 through $num-cards {
+      &--#{$i} {
+        animation-delay: $anim-cards-delay * $i *2;
+      }
+    }
+    &--text {
+      min-width: 170px;
+    }
+  }
+  &__price {
+    width: 60px;
+    &--text {
+      font-weight: $gras;
+    }
+    &--validation {
+      color: $color-neutral;
+      background-color: $color-tertiary;
+    }
+  }
+} 
 /*footer */
 .footer {
   height: 190px;
@@ -301,11 +378,11 @@ body {
     margin: 0;
     padding: 20px 0 0 40px;
   }
-}
-.menu__items {
-  max-width: 200px;
-  margin-bottom: 5px;
-  &--link {
-    color: $color-neutral;
+  &__items {
+    max-width: 200px;
+    margin-bottom: 5px;
+    &--link {
+      color: $color-neutral;
+    }
   }
 }
