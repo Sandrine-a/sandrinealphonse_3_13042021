@@ -19,7 +19,7 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 7 par défaut*/
+  /*remettre a  par défaut*/
   animation: anim-bars $anim-dur*8 ease-in-out;
   z-index: -1000;
   background-color: $color-neutral;
@@ -31,17 +31,19 @@ body {
   height: $size-bar*7;
   display: flex;
   justify-content: space-evenly;
-  margin: $size-bar*10 $size-bar*2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50%;
   &__bar {
     background-color: $color-tertiary;
     height: 100%;
     width: $size-bar;
     animation: bars $anim-dur backwards 7 ease-in-out alternate;
     opacity: 0;
-    @for $i from 1 through $num-bars {
-      &--#{$i} {
-        animation-delay: $anim-delay * $i;
-      }
+  }
+  @for $i from 1 through $num-bars {
+    & > &__bar:nth-child(#{$i}) {
+      animation-delay: $anim-delay * $i;
     }
   }
 }

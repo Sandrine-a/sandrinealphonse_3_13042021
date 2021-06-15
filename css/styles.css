@@ -68,7 +68,7 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 7 par défaut*/
+  /*remettre a  par défaut*/
   animation: anim-bars 8000ms ease-in-out;
   z-index: -1000;
   background-color: white;
@@ -81,7 +81,9 @@ body {
   height: 28vh;
   display: flex;
   justify-content: space-evenly;
-  margin: 40vh 8vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50%;
 }
 .load__bar {
   background-color: #99E2D0;
@@ -90,19 +92,19 @@ body {
   animation: bars 1000ms backwards 7 ease-in-out alternate;
   opacity: 0;
 }
-.load__bar--1 {
+.load > .load__bar:nth-child(1) {
   animation-delay: 200ms;
 }
-.load__bar--2 {
+.load > .load__bar:nth-child(2) {
   animation-delay: 400ms;
 }
-.load__bar--3 {
+.load > .load__bar:nth-child(3) {
   animation-delay: 600ms;
 }
-.load__bar--4 {
+.load > .load__bar:nth-child(4) {
   animation-delay: 800ms;
 }
-.load__bar--5 {
+.load > .load__bar:nth-child(5) {
   animation-delay: 1000ms;
 }
 
