@@ -10,18 +10,18 @@
   </head> 
   <body>
     <header class="banner">
-      <a a href="index.html" class="banner__icone">
-        <i class="fas fa-arrow-left"></i>
-      </a>
-      <a href="index.html" target="_blank"><img src="images/logo/ohmyfood@2x.svg" alt="logo oh my food" class="banner__logo" /></a>
+      <div class="banner__icone">
+       <a href="index.html" class="banner__icone--link">
+        <i class="fas fa-arrow-left fa-lg banner__icone--arrow"></i>
+       </a>
+      </div>
+      <a href="index.html" target="_blank" class="banner__link"><img src="images/logo/ohmyfood@2x.svg" alt="logo oh my food" class="banner__logo" /></a>
     </header>
     <main>
-      <section class="section1">
-        <div class="hightlight__photo">
-          <img src="images/restaurants/toa-heftiba.jpg" alt="restaurant À la française">
-        </div>
+      <section class="hightlight">
+          <img src="images/restaurants/toa-heftiba.jpg" alt="restaurant À la française" class="hightlight__photo">
       </section>
-      <section class="menu__container">
+      <section class="section-card">
         <div class="menu__top">
           <h2 class="name"> À la française</h1>
           <div class="card__description--icones">
@@ -31,27 +31,59 @@
         </div>
         <section class="menu__section">
           <div class="menu__title">
-            <p class="menu__title--text">PLATS</p>
+            <p class="menu__title--text"><span class="menu__title--borderpart">Entr</span>ées</p>
           </div>
           <div class="menu__cardsection">
-            <div class="menu__card">
-              <div class="card__description--text">
+            <div class="menu__card menu__card--3">
+              <div class="menu__card--text">
                 <p class="card__description--medium">Tartare de poulpe acidulé</p>
-                <p>Aux zestes d'orange</p>
+                <p class="card__description--thin">Aux zestes d'orange</p>
               </div>
-              <div class="menu__card--price">
-                <p class="card__description--medium">25€</p>
-                <div class="menu__card--icone">
-                  <i class="fas fa-check-circle"></i>
+              <div class="menu__price">
+                <p class="menu__price--text">25€</p>
+                <div class="menu__price--validation">
+                  <i class="fas fa-check-circle fa-lg"></i>
                 </div>
               </div>
             </div>
-            <div class="menu__card"></div>
-            <div class="menu__card"></div>
+            <div class="menu__card menu__card--2">
+              <div class="menu__card--text">
+                <p class="card__description--medium">Velouté de légumes d'antan</p>
+                <p class="card__description--thin">Carotte, panais, topinambour</p>
+              </div>
+              <div class="menu__price">
+                <p class="menu__price--text">35€</p>
+                <div class="menu__price--validation">
+                  <i class="fas fa-check-circle fa-lg"></i>
+                </div>
+              </div>
+            </div>
+            <div class="menu__card menu__card--1">
+              <div class="menu__card--text ">
+                <p class="card__description--medium">Soupe à l'oignon</p>
+                <p class="card__description--thin">Revisitée</p>
+              </div>
+              <div class="menu__price">
+                <p class="menu__price--text">20€</p>
+                <div class="menu__price--validation">
+                  <i class="fas fa-check-circle fa-lg"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- section a dedoubler menu cardescion a dédoubler -->
+        </section>
+        <section class="menu__section">
+          <div class="menu__title">
+            <p class="menu__title--text"><span class="menu__title--borderpart">plat</span>s</p>
           </div>
         </section>
-        <section class="menu__section"></section>
-        <section class="menu__section"></section>
+        <section class="menu__section">
+          <div class="menu__title">
+            <p class="menu__title--text"><span class="menu__title--borderpart">dess</span>erts</p>
+          </div>
+        </section>
+        </section>
         <div class="explorer">
           <div class="explorer__btn">
             <a href="menu1.html" class="explorer__btn--link" target="_blank"> Commander</a>
