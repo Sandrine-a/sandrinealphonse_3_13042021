@@ -102,10 +102,10 @@ body {
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50%;
+  margin-top: 20%;
 }
 .load__bar {
-  background-color: #99E2D0;
+  background: linear-gradient(355deg, #9356DC 0%, #FF79DA 90%);
   height: 100%;
   width: 4vh;
   animation: bars 1000ms backwards 7 ease-in-out alternate;
@@ -283,7 +283,7 @@ body {
   opacity: 0;
   content: "";
   position: absolute;
-  top: -35px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -314,20 +314,18 @@ body {
 
 .restaurants {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 1220px;
+  flex-wrap: wrap;
 }
 .restaurants__title {
   align-self: baseline;
   margin-left: 15px;
 }
 .restaurants__cardsection {
+  justify-content: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  height: 1070px;
+  margin: 20px;
 }
 
 .card {
@@ -338,6 +336,7 @@ body {
   border-radius: 20px;
   position: relative;
   background-color: white;
+  margin-bottom: 20px;
 }
 .card__img {
   width: 100%;

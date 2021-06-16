@@ -55,7 +55,7 @@
 @mixin pseudo-pos {
   content: "";
   position: absolute;
-  top: -35px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
