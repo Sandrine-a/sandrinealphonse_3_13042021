@@ -74,12 +74,20 @@ body {
 /*Pages Menu*/ 
 .hightlight {
   &__photo {
-  height: 250px;
+  width: 100%;
   }
 }
 .section-card {
   @include bloc-background($color-shadow);
   font-family: $roboto;
+  position: relative;
+  margin-top: 0;
+  &::before {
+    @include pseudo-border($color-shadow);
+    @include bloc-background($color-shadow);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
 }
 /*page accueil*/
 /*section 1*/
@@ -320,7 +328,7 @@ body {
 .menu {
   &__top {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     @include title-shrikhand($color-black) 
   }
   &__title {
@@ -336,37 +344,86 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 270px;
+    @for $i from 1 through $num-cards {
+      & .menu__card:nth-child(#{$i}) {
+        animation-delay: $anim-cards-delay * $i;
+      }
+    }
   }
   &__card {
     @include curve-border($color-shadow);
     @include bloc-background($color-neutral);
+    @include shadow($color-shadow-dark);
     display: flex;
     justify-content: space-between;
     overflow: hidden;
     padding: 0 8px;
     height: 70px;
-    animation: card-display $anim-dur forwards ease-in-out;
     opacity: 0;
-    @for $i from 1 through $num-cards {
-      &--#{$i} {
-        animation-delay: $anim-cards-delay * $i *2;
+    animation: card-display $anim-dur forwards ease-in-out;
+    transform-origin: bottom;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    &:hover {
+      .menu__card--price {
+        animation: card-shrink 1200ms ease-in-out forwards;
+      }
+      .menu__card--validation{
+        animation: card-validation 1100ms 100ms ease-in-out forwards;
+        animation-direction: reverse;
+      }
+      .fa-check-circle {
+        transform: rotate(1turn); 
       }
     }
     &--text {
       min-width: 170px;
     }
-  }
-  &__price {
-    width: 60px;
-    &--text {
-      font-weight: $gras;
-    }
     &--validation {
       color: $color-neutral;
       background-color: $color-tertiary;
+      width: 60px;
+      text-align: center;
+      padding-top: 24px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      position: absolute;
+      right:0;
+      top:0;
+      bottom:0;
+      opacity: 0;
+      z-index: 5;
     }
+    &--price {
+      font-weight: $gras;
+      width: 50px;
+      height: 35px;
+      padding-top: 20px;
+      padding-left: 10px;
+      z-index: 3;
+      position: relative;
+      @include bloc-background($color-neutral);
+      &::after{
+        @include pseudo-pos-full($content);
+        @include bloc-background($color-neutral);
+        width:25px;
+        z-index: 3;
+        opacity: 1;
+      }
+    }    
   }
-} 
+}
+.fa-check-circle {
+  transition: transform 1000ms 500ms;
+}
+.order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 175px;
+  @include bloc-background($color-shadow);
+}
 /*footer */
 .footer {
   height: 190px;

@@ -34,3 +34,21 @@
     opacity: 1;
   }
 }
+@keyframes card-shrink {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@keyframes card-validation {
+  0% {
+    transform: translate(0%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0);
+    opacity: 1;
+  }
+}

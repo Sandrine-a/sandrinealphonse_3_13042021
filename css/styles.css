@@ -36,12 +36,31 @@
     opacity: 1;
   }
 }
+@keyframes card-shrink {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@keyframes card-validation {
+  0% {
+    transform: translate(0%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 0);
+    opacity: 1;
+  }
+}
 /*font variables*/
 /*size variables*/
 /*padding*/
 /*durées*/
 /*varaibles pour loader*/
 /*variables icones*/
+/*test*/
 /*backgrounds*/
 /*color*/
 /*polices*/
@@ -135,12 +154,26 @@ body {
 
 /*Pages Menu*/
 .hightlight__photo {
-  height: 250px;
+  width: 100%;
 }
 
 .section-card {
   background-color: #f6f6f6;
   font-family: "Roboto", Arial, Georgia, sans-serif;
+  position: relative;
+  margin-top: 0;
+}
+.section-card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  background-color: #f6f6f6;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 /*page accueil*/
@@ -188,7 +221,10 @@ body {
   height: 50px;
   width: 200px;
   padding-top: 13px;
+  font-family: "Roboto", Arial, Georgia, sans-serif;
+  text-align: center;
   background: linear-gradient(355deg, #9356DC 0%, #FF79DA 90%);
+  box-shadow: 3px 4px 6px #eaeaea, -1px -2px 12px #eaeaea;
   transition: box-shadow 1000ms 300ms ease-in-out, background-color 1300ms ease-in-out;
 }
 .explorer__btn:hover {
@@ -247,7 +283,7 @@ body {
   opacity: 0;
   content: "";
   position: absolute;
-  top: 0;
+  top: -35px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -427,7 +463,7 @@ body {
 /*Pages Menu*/
 .menu__top {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   color: black;
   font-family: "Shrikhand", cursive, Arial, Georgia, sans-serif;
   font-size: 15px;
@@ -445,39 +481,90 @@ body {
   justify-content: space-between;
   height: 270px;
 }
+.menu__cardsection .menu__card:nth-child(1) {
+  animation-delay: 333.3333333333ms;
+}
+.menu__cardsection .menu__card:nth-child(2) {
+  animation-delay: 666.6666666667ms;
+}
+.menu__cardsection .menu__card:nth-child(3) {
+  animation-delay: 1000ms;
+}
 .menu__card {
   border: 1px solid #f6f6f6;
   border-radius: 20px;
   background-color: white;
+  box-shadow: 3px 4px 6px #eaeaea, -1px -2px 12px #eaeaea;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
   padding: 0 8px;
   height: 70px;
-  animation: card-display 1000ms forwards ease-in-out;
   opacity: 0;
+  animation: card-display 1000ms forwards ease-in-out;
+  transform-origin: bottom;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
 }
-.menu__card--1 {
-  animation-delay: 666.6666666667ms;
+.menu__card:hover .menu__card--price {
+  animation: card-shrink 1200ms ease-in-out forwards;
 }
-.menu__card--2 {
-  animation-delay: 1333.3333333333ms;
+.menu__card:hover .menu__card--validation {
+  animation: card-validation 1100ms 100ms ease-in-out forwards;
+  animation-direction: reverse;
 }
-.menu__card--3 {
-  animation-delay: 2000ms;
+.menu__card:hover .fa-check-circle {
+  transform: rotate(1turn);
 }
 .menu__card--text {
   min-width: 170px;
 }
-.menu__price {
-  width: 60px;
-}
-.menu__price--text {
-  font-weight: 700;
-}
-.menu__price--validation {
+.menu__card--validation {
   color: white;
   background-color: #99E2D0;
+  width: 60px;
+  text-align: center;
+  padding-top: 24px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 5;
+}
+.menu__card--price {
+  font-weight: 700;
+  width: 50px;
+  height: 35px;
+  padding-top: 20px;
+  padding-left: 10px;
+  z-index: 3;
+  position: relative;
+  background-color: white;
+}
+.menu__card--price::after {
+  content: "...";
+  position: absolute;
+  left: -20px;
+  background-color: white;
+  width: 25px;
+  z-index: 3;
+  opacity: 1;
+}
+
+.fa-check-circle {
+  transition: transform 1000ms 500ms;
+}
+
+.order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 175px;
+  background-color: #f6f6f6;
 }
 
 /*footer */

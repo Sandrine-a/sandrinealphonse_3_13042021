@@ -40,7 +40,10 @@
   height: 50px;
   width: 200px;
   padding-top: $padding-btn;
+  font-family: $roboto;
+  text-align: center;
   @include clr-radiant;
+  @include shadow($color-shadow-dark);
   transition: box-shadow 1000ms 300ms ease-in-out, background-color 1300ms ease-in-out;
   &:hover {
     background: none;
@@ -52,10 +55,24 @@
 @mixin pseudo-pos {
   content: "";
   position: absolute;
-  top: 0;
+  top: -35px;
   right: 0;
   bottom: 0;
   left: 0;
+}
+@mixin pseudo-border($color){
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+}
+@mixin pseudo-pos-full($content) {
+  content: "#{$content}";
+  position: absolute;
+  left: -20px;
 }
 /*styles*/
 @mixin curve-border($color){
