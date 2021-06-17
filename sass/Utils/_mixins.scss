@@ -84,6 +84,9 @@
   border-radius: 20px;
   }
 }
+@mixin margin-menu {
+  margin: auto 15px;
+}
 /*icones*/
 @mixin heart-base {
   height: 14px;

@@ -36,19 +36,27 @@
 }
 @keyframes card-shrink {
   0% {
-    transform: translate(0, 0);
+    width: 50px
   }
   100% {
-    transform: translate(-100%, 0);
+    width: 100px;
   }
 }
 @keyframes card-validation {
   0% {
-    transform: translate(0%, 0);
-    opacity: 1;
+    transform: translateX(100%);
+    opacity: 0;
   }
   100% {
-    transform: translate(100%, 0);
+    transform: translateX(0%);
     opacity: 1;
+  }
+}
+@keyframes check-round {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
