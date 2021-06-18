@@ -98,15 +98,25 @@ body {
   font-family: $roboto;
 }
 .situation {
-  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $color-shadow-dark;
   height:50px;
-  padding-top: $size-small;
-  a {
-    color: $color-black;
+  &__icones {
+    display: inline-block;
+    padding-bottom: 5px;
   }
-  &--icones {
-    margin-right: $size-small;
+  & input {
+    background-color: $color-shadow-dark;
+    border: none;
+    font-size: $size-medium;
+    width: 150px;
+    margin-left: 20px;
+    &::placeholder {
+      color: $color-black;
+      opacity: 1;
+    }
   }
 }
 .explorer {
