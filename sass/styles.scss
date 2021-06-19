@@ -368,6 +368,9 @@ body {
     @include margin-menu;
   }
   &__section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
     @include margin-menu;
   }
   &__title {
@@ -383,8 +386,6 @@ body {
   &__cardsection {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 270px;
     @for $i from 1 through $num-cards {
       & .menu__card:nth-child(#{$i}) {
         animation-delay: $anim-cards-delay * $i;
@@ -400,6 +401,7 @@ body {
     padding: 0 8px;
     height: 70px;
     opacity: 0;
+    margin-bottom: $size-small;
     animation: card-display $anim-dur forwards ease-in-out;
     transform-origin: bottom;
     position: relative;
@@ -407,14 +409,13 @@ body {
     &:hover,
     &:active {
       .menu__card--price {
-        animation: card-shrink 1100ms ease-in-out forwards;
+        margin-right: 50px;
       }
       .menu__card--validation{
-        animation-play-state: running;
-        animation: card-validation $anim-dur 100ms ease-in-out forwards;
+        transform: translateX(-100%);
       }
       .fa-check-circle {
-        animation: check-round $anim-dur 500ms;
+        animation: check-round 600ms 400ms;
       }
     }
     &--text {
@@ -435,8 +436,9 @@ body {
       right:0;
       top:0;
       bottom:0;
-      opacity: 0;
-      transform: scale(0);
+      opacity: 1;
+      margin-right: -60px;
+      transition: transform $anim-dur ease-in-out;
     }
     &--price {
       font-weight: $gras;
@@ -445,6 +447,7 @@ body {
       background-color: white;
       align-self: flex-end;
       @include bloc-background($color-neutral);
+      transition: margin-right 900ms ease-in-out;
     }    
   }
 }
