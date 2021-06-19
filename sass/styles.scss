@@ -18,8 +18,8 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a  par défaut*/
-  animation: anim-bars $anim-dur*8 ease-in-out;
+  /*remettre a 8 par défaut*/
+  animation: anim-bars $anim-dur*1 ease-in-out;
   z-index: -1000;
   background-color: $color-neutral;
   width: 100%;
@@ -37,7 +37,8 @@ body {
     @include clr-radiant;
     height: 100%;
     width: $size-bar;
-    animation: bars $anim-dur backwards 7 ease-in-out alternate;
+    /*a 7 par défaut pour temps normal*/
+    animation: bars $anim-dur backwards 1 ease-in-out alternate;
     opacity: 0;
   }
   @for $i from 1 through $num-bars {
@@ -140,6 +141,16 @@ body {
     @include btn ($color-secondary-light);
     &--link {
       @include title-btn ($color-neutral);
+    }
+    &::after{
+      opacity: 0;
+      z-index: -1;
+      border-radius: 40px;
+      height: 50px;
+      width: 200px;
+      background-color: $color-secondary;
+      @include pseudo-pos;
+      @include shadow($color-accent);
     }
   }
 }

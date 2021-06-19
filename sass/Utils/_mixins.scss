@@ -6,7 +6,7 @@
   background-color: lighten($color, 30%);
 }
 @mixin shadow($color) {
-  box-shadow: 3px 4px 6px ($color), -1px -2px 12px ($color);
+  box-shadow: 1px 4px 5px ($color), -1px -2px 5px ($color);
 }
 /*color*/
 @mixin clr-radiant {
@@ -35,20 +35,22 @@
 @mixin btn($color) {
   cursor: pointer;
   color: $color-neutral;
-  border: 1px solid $color-shadow;
   border-radius: 40px;
   height: 50px;
   width: 200px;
   padding-top: $padding-btn;
   font-family: $roboto;
   text-align: center;
+  position: relative;
+  opacity:1;
+  z-index: 1;
   @include clr-radiant;
   @include shadow($color-shadow-dark);
-  transition: box-shadow 1000ms 300ms ease-in-out, background-color 1300ms ease-in-out;
   &:hover {
-    background: none;
-    @include shadow($color-accent);
-    background-color: $color;
+    animation: btn-opacity 200ms forwards;
+    &::after {
+      animation: btn-active 600ms ease-in-out forwards, box-shadow 100ms 500ms ease-in;
+    }
   }
 }
 /*mixi pour creer contenu before ou after*/
