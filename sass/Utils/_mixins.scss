@@ -16,7 +16,6 @@
 @mixin title-shrikhand($color) {
   color: $color;
   font-family: $shrikhand;
-  font-size: $size-small;
 }
 @mixin title-btn($color){
   height: 30px;

@@ -95,8 +95,8 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 8 par défaut*/
-  animation: anim-bars 1000ms ease-in-out;
+  /*remettre a 7 par défaut*/
+  animation: anim-bars 7000ms ease-in-out;
   z-index: -1000;
   background-color: white;
   width: 100%;
@@ -116,8 +116,8 @@ body {
   background: linear-gradient(355deg, #9356DC 0%, #FF79DA 90%);
   height: 100%;
   width: 4vh;
-  /*a 7 par défaut pour temps normal*/
-  animation: bars 1000ms backwards 1 ease-in-out alternate;
+  /*a 6 par défaut pour temps normal*/
+  animation: bars 1000ms backwards 6 ease-in-out alternate;
   opacity: 0;
 }
 .load > .load__bar:nth-child(1) {
@@ -169,7 +169,6 @@ body {
   width: 100%;
   height: 270px;
   object-fit: cover;
-  object-position: center 80%;
 }
 
 .section-card {
@@ -516,10 +515,11 @@ body {
 .menu__top {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   color: black;
   font-family: "Shrikhand", cursive, Arial, Georgia, sans-serif;
-  font-size: 15px;
   margin: auto 15px;
+  font-size: 1.2em;
 }
 .menu__section {
   height: auto;
@@ -530,7 +530,8 @@ body {
 .menu__title--text {
   text-transform: uppercase;
   font-weight: lighter;
-  margin-top: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 .menu__title--borderpart {
   border-bottom: 2px solid #99E2D0;
@@ -539,14 +540,18 @@ body {
 .menu__cardsection {
   display: flex;
   flex-direction: column;
+  margin-bottom: 25px;
 }
 .menu__cardsection .menu__card:nth-child(1) {
-  animation-delay: 333.3333333333ms;
+  animation-delay: 250ms;
 }
 .menu__cardsection .menu__card:nth-child(2) {
-  animation-delay: 666.6666666667ms;
+  animation-delay: 500ms;
 }
 .menu__cardsection .menu__card:nth-child(3) {
+  animation-delay: 750ms;
+}
+.menu__cardsection .menu__card:nth-child(4) {
   animation-delay: 1000ms;
 }
 .menu__card {
@@ -606,6 +611,10 @@ body {
   transition: margin-right 900ms ease-in-out;
 }
 
+.name {
+  margin-top: 0;
+}
+
 .order {
   display: flex;
   justify-content: center;
@@ -625,10 +634,10 @@ body {
 .footer__title {
   color: white;
   font-family: "Shrikhand", cursive, Arial, Georgia, sans-serif;
-  font-size: 15px;
   max-width: 200px;
   margin: 0;
   padding: 20px 0 0 40px;
+  font-size: 17px;
 }
 .footer__items {
   max-width: 200px;

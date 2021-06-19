@@ -1,5 +1,5 @@
 @import "./Base/charte";
-@import "./Base/keyframes";
+@import "./Utils/keyframes";
 @import "./Utils/variables";
 @import "./Utils/mixins";
 
@@ -18,8 +18,8 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 8 par défaut*/
-  animation: anim-bars $anim-dur*1 ease-in-out;
+  /*remettre a 7 par défaut*/
+  animation: anim-bars $anim-dur*7 ease-in-out;
   z-index: -1000;
   background-color: $color-neutral;
   width: 100%;
@@ -37,8 +37,8 @@ body {
     @include clr-radiant;
     height: 100%;
     width: $size-bar;
-    /*a 7 par défaut pour temps normal*/
-    animation: bars $anim-dur backwards 1 ease-in-out alternate;
+    /*a 6 par défaut pour temps normal*/
+    animation: bars $anim-dur backwards 6 ease-in-out alternate;
     opacity: 0;
   }
   @for $i from 1 through $num-bars {
@@ -78,7 +78,6 @@ body {
   width: 100%;
   height: 270px;
   object-fit: cover;
-  object-position: center 80%;
   }
 }
 .section-card {
@@ -364,8 +363,10 @@ body {
   &__top {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     @include title-shrikhand($color-black);
     @include margin-menu;
+    font-size: 1.2em;
   }
   &__section {
     height: auto;
@@ -376,7 +377,8 @@ body {
   &__title {
     &--text {
       @include title-text-menu;
-      margin-top: 20px;
+      margin-top: 0;
+      margin-bottom: 20px;
     }
     &--borderpart {
       @include text-underline($color-tertiary);
@@ -386,6 +388,7 @@ body {
   &__cardsection {
     display: flex;
     flex-direction: column;
+    margin-bottom: 25px;
     @for $i from 1 through $num-cards {
       & .menu__card:nth-child(#{$i}) {
         animation-delay: $anim-cards-delay * $i;
@@ -451,6 +454,9 @@ body {
     }    
   }
 }
+.name {
+  margin-top:0
+}
 .order {
   display: flex;
   justify-content: center;
@@ -470,6 +476,7 @@ body {
     max-width: 200px;
     margin: 0;
     padding: 20px 0 0 40px;
+    font-size: $size-medium;
   }
   &__items {
     max-width: 200px;
