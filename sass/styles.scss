@@ -18,55 +18,80 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 7 par défaut*/
-  animation: anim-bars $anim-dur*7 ease-in-out;
+  /*remettre a 6.5 par défaut*/
+  animation: anim-circle $anim-dur*.5 cubic-bezier(.79,.01,1,1);
   z-index: -1000;
+  opacity: 0;
   background-color: $color-neutral;
   width: 100%;
   height: 100%;
 }
 .load {
-  width: $size-bar*10;
-  height: $size-bar*7;
-  display: flex;
-  justify-content: space-evenly;
+  width: 150px;
+  width: 150px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20%;
-  &__bar {
-    @include clr-radiant;
-    height: 100%;
-    width: $size-bar;
-    /*a 6 par défaut pour temps normal*/
-    animation: bars $anim-dur backwards 6 ease-in-out alternate;
-    opacity: 0;
-  }
-  @for $i from 1 through $num-bars {
+  @for $i from 1 through $num-circle {
     & > &__bar:nth-child(#{$i}) {
       animation-delay: $anim-delay * $i;
     }
+  }
+  &__bar {
+    scale: 0;
+    border: $width-spin $color-primary double;
+    border-bottom-color: $color-secondary;
+    border-top-color: $color-secondary;
+    animation: spinner-back $anim-dur linear 6 alternate both;
+  }
+  &__bar:nth-child(1) {
+    position: absolute;
+    top:50px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+  }
+  &__bar:nth-child(2) {
+    position: absolute;
+    top:25px;
+    left: 25px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+  }
+  &__bar:nth-child(3) {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
   }
 }
 /*header*/
 .banner{
   display: flex;
+  justify-content: center;
   &__icone {
     height: 100%;
     width: 25%;
-    &--link {
-      height: 100%;
-      width: 100%;
-      color: $color-black;
-    }
+    max-width:80px;
+    margin-right: 25px;
     &--arrow {
       padding: 21px;
+      color: $color-black;
     }
+  }
+  &__link {
+    width: 70%;
+    height: 100%;
+    max-width: 250px;
   }
   &__logo {
     padding: $size-small 0; 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
+    max-width: 100%;
+    height: 60px;
   }
 }
 /*Pages Menu*/ 
@@ -91,9 +116,6 @@ body {
     @include bloc-background($color-shadow);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-  }
-  @media all and (min-width: 768px) {
-
   }
 }
 /*page accueil*/
@@ -158,16 +180,28 @@ body {
   }
 }
 .presentation {
-  margin-left: 15px;
   height: 430px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media all and (min-width: 768px) {
+    align-items: center;
+  }
+  &__title {
+    margin-left: 15px;
+    width: auto;
+  }
   &__section {
     height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    width: auto;
+    max-width: 500px;
+    @media all and (min-width: 768px) {
+      min-width: 500px;
+    }
   }
 }
 .presentation__items {
@@ -175,8 +209,9 @@ body {
   align-items: center;
   border: 1px solid $color-shadow;
   height: 70px;
-  max-width: 320px;
-  padding-left: 35px;
+  padding: 0 35px;
+  min-width: 90%;
+  width: auto;
   @include curve-border($color-shadow-dark);
   @include bloc-background($color-shadow);
   @include shadow($color-shadow-dark);
@@ -224,13 +259,16 @@ body {
 }
 .restaurants {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 1400px;
+  margin-right: auto;
+  margin-left: auto;
   &__title {
     align-self: baseline;
     margin-left: 15px;
   }
   &__cardsection {
-    justify-content: center;
+    justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -372,8 +410,6 @@ body {
     font-size: 1.2em;
     max-width: 600px;
     width:95%;
-    @media all and (min-width: 768px) {
-    }
   }
   &__section {
     height: auto;
@@ -497,6 +533,11 @@ body {
   &__items {
     max-width: 200px;
     margin-bottom: 5px;
+    i {
+      margin-right: 10px;
+      width: 15px;
+      height: 15px;
+    }
     &--link {
       color: $color-neutral;
     }

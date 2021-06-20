@@ -1,19 +1,26 @@
-@keyframes bars {
+
+@keyframes spinner-back {
   0% {
-    transform: scaleY(0.3);
-    opacity: 1;
+    transform:rotate(0deg) scale(0) ;
+    opacity: 0.2;
+  }
+  50% {
+    transform: rotate(180deg) scale(.5) ;
+    opacity: 0.5;
   }
   100% {
-    transform: scaleY(1.0);
+    transform: rotate(360deg) scale(1) ;
     opacity: 1;
-  }
+  } 
 }
-@keyframes anim-bars {
+@keyframes anim-circle {
   0% {
     z-index: 1000;
+    opacity: 1;
   }
   100% {
-    z-index: 1000
+    z-index: 1000;
+    opacity: 0.8;
   }
 }
 @keyframes heart-fill {
