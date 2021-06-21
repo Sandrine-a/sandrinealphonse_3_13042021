@@ -276,7 +276,7 @@ body {
 }
 .card {
   overflow: hidden;
-  max-width: 334px;
+  width: 330px;
   height: 250px;
   @include curve-border($color-shadow);
   position: relative;
@@ -303,7 +303,7 @@ body {
     color: black;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px 0 12px;
+    padding: 0 10px 0 12px;
     &--text {
       max-width: 165px;
     }
@@ -324,7 +324,7 @@ body {
     &--icones {
       width: 40px;
       height: 40px;
-      padding-top: 25px;
+      padding-top: 20px;
       position: relative;
     }
   }
@@ -381,13 +381,14 @@ body {
     opacity: 0;
     z-index: 1;
     position: absolute;
-    bottom: -2px;
+    bottom: 3px;
     left: 1px;
   }
 }
 .like__bg {
   @include heart-base;
   background: radial-gradient($color-primary, $color-secondary);
+  opacity: 0;
   &::before {
     background: linear-gradient($color-primary, 80%, $color-secondary);
     @include heart-rounds;
