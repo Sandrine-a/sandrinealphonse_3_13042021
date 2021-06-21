@@ -25,11 +25,11 @@
 }
 @keyframes heart-fill {
   0% {
-    transform: scaleY(0.1), rotate(45deg);
+    transform: scale(0.5) rotate(45deg);
     opacity: .10;
   }
   100% {
-    transform: scaleY(1), rotate(45deg);
+    transform: scale(1) rotate(45deg);
     opacity: 1;
   }
 }

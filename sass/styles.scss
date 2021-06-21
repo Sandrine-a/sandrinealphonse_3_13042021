@@ -18,8 +18,8 @@ body {
 /*loader*/
 .container__load {
   position: fixed;
-  /*remettre a 6.5 par défaut*/
-  animation: anim-circle $anim-dur*.5 cubic-bezier(.79,.01,1,1);
+  /*remettre a 6.5 par défaut for 6 round by circle*/
+  animation: anim-circle $anim-dur*6.5 cubic-bezier(.79,.01,1,1);
   z-index: -1000;
   opacity: 0;
   background-color: $color-neutral;
@@ -34,18 +34,17 @@ body {
   margin-right: auto;
   margin-top: 20%;
   @for $i from 1 through $num-circle {
-    & > &__bar:nth-child(#{$i}) {
+    & > &__circle:nth-child(#{$i}) {
       animation-delay: $anim-delay * $i;
     }
   }
-  &__bar {
-    scale: 0;
+  &__circle {
     border: $width-spin $color-primary double;
     border-bottom-color: $color-secondary;
     border-top-color: $color-secondary;
     animation: spinner-back $anim-dur linear 6 alternate both;
   }
-  &__bar:nth-child(1) {
+  &__circle:nth-child(1) {
     position: absolute;
     top:50px;
     left: 50px;
@@ -53,7 +52,7 @@ body {
     height: 50px;
     border-radius: 50px;
   }
-  &__bar:nth-child(2) {
+  &__circle:nth-child(2) {
     position: absolute;
     top:25px;
     left: 25px;
@@ -61,7 +60,7 @@ body {
     height: 100px;
     border-radius: 100px;
   }
-  &__bar:nth-child(3) {
+  &__circle:nth-child(3) {
     position: absolute;
     width: 150px;
     height: 150px;
