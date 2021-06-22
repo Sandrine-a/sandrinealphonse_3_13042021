@@ -201,6 +201,12 @@ body {
     @media all and (min-width: 768px) {
       min-width: 500px;
     }
+    >:nth-child(3) {
+      @include bloc-background-light($color-primary);
+      & .presentation__items--icones {
+        color: $color-primary;
+      }
+    }
   }
 }
 .presentation__items {
@@ -214,7 +220,6 @@ body {
   @include curve-border($color-shadow-dark);
   @include bloc-background($color-shadow);
   @include shadow($color-shadow-dark);
-  cursor: pointer;
   position: relative;
   z-index: 1;
   &:hover {
@@ -290,7 +295,7 @@ body {
     &--sticker {
       width: 85px;
       height: 30px;
-      color: rgb(68, 131, 103);
+      color: $color-tertiary-dark;
       padding: 5px 0 0 9px;
       background-color: $color-tertiary;
       @include curve-border($color-tertiary);
@@ -300,12 +305,13 @@ body {
     }
   }
   &__description {
-    color: black;
+    color:$color-black;
     display: flex;
     justify-content: space-between;
     padding: 0 10px 0 12px;
     &--text {
       max-width: 165px;
+      color:$color-black;
     }
     &--medium {
       font-weight: $gras;
