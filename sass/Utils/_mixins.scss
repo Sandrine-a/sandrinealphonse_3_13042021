@@ -26,6 +26,7 @@
  @mixin title-text-menu {
   text-transform: uppercase;
   font-weight: lighter;
+  font-size: $size-medium;
  }
  @mixin text-underline($color){
    border-bottom: 2px solid $color;
