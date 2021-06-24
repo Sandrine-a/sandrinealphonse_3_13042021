@@ -28,11 +28,10 @@ body {
 }
 .load {
   width: 150px;
-  width: 150px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20%;
+  margin-top: 30%;
   @for $i from 1 through $num-circle {
     & > &__circle:nth-child(#{$i}) {
       animation-delay: $anim-delay * $i;
@@ -128,6 +127,7 @@ body {
   align-items: center;
   background-color: $color-shadow-dark;
   height:50px;
+  box-shadow: inset 0px 10px 6px -10px $color-accent;
   &__icones {
     display: inline-block;
     padding-bottom: 5px;
@@ -150,7 +150,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 280px;
+  min-height: 280px;
   @include bloc-background($color-shadow);
   &__title {
     width: 75%;
@@ -170,8 +170,6 @@ body {
       opacity: 0;
       z-index: -1;
       border-radius: 40px;
-      height: 50px;
-      width: 200px;
       background-color: $color-secondary;
       @include pseudo-pos;
       @include shadow($color-accent);
@@ -200,12 +198,6 @@ body {
     max-width: 500px;
     @media all and (min-width: 768px) {
       min-width: 500px;
-    }
-    >:nth-child(3) {
-      @include bloc-background-light($color-primary);
-      & .presentation__items--icones {
-        color: $color-primary;
-      }
     }
   }
 }
@@ -330,48 +322,46 @@ body {
     &--icones {
       width: 40px;
       height: 40px;
-      padding-top: 20px;
       position: relative;
     }
   }
 }
 .like {
-  height: 16px;
-  width: 16px;
-  transform: rotate(45deg);
+  @include heart-base;
   opacity: 1;
-  border-bottom: 1px solid $color-black;
-  border-right: 1px solid $color-black;
-  position: absolute;
+  border-bottom: 2px solid $color-black;
+  border-right: 2px solid $color-black;
+  top: 28px;
+  right:25px;
   z-index: 3;
   transition: opacity $anim-dur;
   cursor: pointer;
     &::before {
       content: "";
-      width: 11px;
-      height: 9px;
+      width: 10px;
+      height:10px;
       position: absolute;
-      border: 1px solid black;
+      border: 2px solid black;
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
-      border-bottom-left-radius: 25%;
+      border-bottom-left-radius: 30%;
       border-bottom: none;
-      top: -5px;
-      left: 3px;
+      top: -9px;
+      left: 0px;
       z-index: 3;
     }
     &::after {
       content: "";
-      width: 9px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       position: absolute;
-      border: 1px solid black;
+      border: 2px solid black;
       border-bottom-left-radius: 50%;
       border-top-left-radius: 50%;
-      border-top-right-radius: 25%;
+      border-top-right-radius: 30%;
       border-right: none;
-      right: 10px;
-      top: 3px;
+      right: 9px;
+      top: 0px;
       z-index: 3;
     }
   &:hover, 
@@ -380,21 +370,14 @@ body {
     + .like__bg {
       animation: heart-fill 1500ms forwards ease-in;
     }
-  }
+  } 
   &__bg {
-    height: 16px;
-    width: 16px;
-    opacity: 0;
-    z-index: 1;
-    position: absolute;
-    bottom: 3px;
-    left: 1px;
-  }
-}
-.like__bg {
   @include heart-base;
-  background: radial-gradient($color-primary, $color-secondary);
   opacity: 0;
+  z-index: 1;
+  top: 28px;
+  right: 25px;
+  background: radial-gradient($color-primary, $color-secondary);
   &::before {
     background: linear-gradient($color-primary, 80%, $color-secondary);
     @include heart-rounds;
@@ -404,6 +387,7 @@ body {
     background: linear-gradient(80deg,$color-primary, 80%, $color-secondary);
     @include heart-rounds;
     top: -8px;
+  }
   }
 }
 /*Pages Menu*/
@@ -516,7 +500,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 175px;
+  height: 150px;
+  width: 95%;
+  padding-bottom: 25px;
   @include bloc-background($color-shadow);
 }
 /*footer */
@@ -531,7 +517,10 @@ body {
     max-width: 200px;
     margin: 0;
     padding: 20px 0 0 20px;
-    font-size: $size-medium;
+    font-size: $title-small;
+    @media all and (min-width: 768px) {
+      font-size: $title-medium;
+    }
   }
   &__nav {
     padding-left: 20px;

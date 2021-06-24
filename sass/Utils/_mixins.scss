@@ -19,6 +19,7 @@
 }
 @mixin title-btn($color){
   height: 30px;
+  padding:15px;
   color: $color;
   text-align: center;
   font-size: $size-small;
@@ -37,7 +38,7 @@
   color: $color-neutral;
   border-radius: 40px;
   height: 50px;
-  width: 200px;
+  min-width:150px;
   padding-top: $padding-btn;
   font-family: $roboto;
   text-align: center;
@@ -47,11 +48,15 @@
   @include clr-radiant;
   @include shadow($color-shadow-dark);
   &:hover {
-    animation: btn-opacity 200ms forwards;
+    animation: btn-opacity 100ms forwards;
     &::after {
-      animation: btn-active 600ms ease-in-out forwards, box-shadow 100ms 500ms ease-in;
+      animation: btn-active 200ms ease-in-out forwards, box-shadow 100ms 200ms ease-in;
     }
   }
+  @media all and (min-width: 768px) {
+    width: 30%;
+  }
+
 }
 /*mixi pour creer contenu before ou after*/
 @mixin pseudo-pos {
