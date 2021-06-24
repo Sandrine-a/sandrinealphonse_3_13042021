@@ -203,7 +203,7 @@ body {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30%;
+  margin-top: 20%;
 }
 .load > .load__circle:nth-child(1) {
   -webkit-animation-delay: 200ms;
