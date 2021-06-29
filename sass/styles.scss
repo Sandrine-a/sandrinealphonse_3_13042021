@@ -278,7 +278,7 @@ body {
   @include curve-border($color-shadow);
   position: relative;
   background-color: white;
-  margin-bottom:20px;
+  margin: 0 0 20px 0;
   &__img {
     width: 100%;
     height: 170px;
