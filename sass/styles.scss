@@ -397,7 +397,6 @@ body {
     justify-content: space-between;
     align-items: baseline;
     @include title-shrikhand($color-black);
-    font-size: 1.2em;
     max-width: 600px;
     width:95%;
   }
@@ -494,15 +493,13 @@ body {
 }
 .name {
   margin-top:0;
-  margin-right: 20px;
+  font-size:1.6em;
 }
 .order {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 150px;
+  height: 140px;
   width: 100%;
-  padding-bottom: 25px;
   @include bloc-background($color-shadow);
 }
 /*footer */
