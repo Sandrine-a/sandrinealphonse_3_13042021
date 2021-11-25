@@ -11,7 +11,7 @@
 - Utiliser un système de gestion de versions pour le suivi du projet et son hébergement
 
 
-*Livrables attedus:*
+*Livrables attendus:*
 
 1. Page d’accueil (x1)
    - Affichage de la localisation des restaurants. À terme il sera possible de choisir sa
